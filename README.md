@@ -3,7 +3,7 @@ Sentimental Analysis tool for Tweets based on a keyword that can convert unstruc
 
 
 Important Notes:
-1)WIP- Will add features to translate tweets and plot statistical information.
+1)WIP- Will add features to translate tweets,store words as tokens and plot statistical information.
 2)Required packages:
   ->numpy
   ->pandas
