@@ -1,8 +1,14 @@
+'''
+notes:
+1)Add exception handling everywhere
+2)Keep applying things that you learn about tweepy and textblob
+'''
 import time
 import tweepy
 from textblob import TextBlob
 import pandas as pd
 import numpy as np
+import sys 
 
 consumer_key="Ee0lw604kCAuzTbFp3pcn5lck"
 consumer_secret="uuedTNbrDhmhsI8QBeOeCcEaOxtoe4nXDPDcRd8XkLF67yzjQ1"
@@ -57,14 +63,19 @@ def ears():
          oo.to_csv(f"{filename}.csv")
      #print(len(tweets)==len(sentiment)==len(subjectivity))
      #print("Total number of tweets",len(tweets))
-     print("1.Go back")
-     user=int(input('>'))
-     if user==1:
+     try:
+            print("1.Go back")
+            user=int(input('>'))
+            if user==1:
+             menu()
+            else:
+             print("That input is invalid, but i'll just take you to the main menu.")
+             time.sleep(2)
+             menu()
+     except:
+         print("Oops",sys.exc_info()[0],"ocurred")
+         print("Going back to menu...")
          menu()
-     else:
-        print("That input is invalid, but i'll just take you to the main menu.")
-        time.sleep(2)
-        menu()
 def menu():
     #Menu Screen
     print("")
@@ -160,4 +171,4 @@ elif userinput==2:
         print("Alright, lets go...")
         time.sleep(1)
         menu()
-    
+
